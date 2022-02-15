@@ -1,0 +1,6 @@
+- name: Installing Homebrew Packages
+  homebrew:
+    name: "{{brew_packages}}"
+    state: present
+  register: result
+  when: homebrew_check.stat.exists

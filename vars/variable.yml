@@ -1,0 +1,71 @@
+
+brew_cask_packages:
+  #DATABASE
+  - mongodb-compass
+  - dbeaver-community
+
+  #GOOGLE
+  - google-chrome
+  - google-drive
+  - google-chat
+
+  #COMMUNICATION
+  - slack
+  - whatsapp
+  - zoom
+  - microsoft-teams
+  - discord
+  - skype
+  
+  #IDES
+  - jetbrains-toolbox
+  - intellij-idea-ce
+  - intellij-idea
+  - visual-studio-code
+
+  # Tools 
+  - notion
+  - ticktick
+  - spotify
+  - github
+  - virtualbox
+  - virtualbox-extension-pack
+  - docker
+  - postman
+  - steam
+  - anki
+  
+brew_packages:
+  - autoconf
+  - bash-completion
+  - boot2docker
+  - docker-compose
+  - docker-machine
+  - doxygen
+  - git
+  - git-lfs
+  - go
+  - jq
+  - nmap
+  - nomad
+  - openssl
+  - packer
+  - pyenv
+  - python
+  - rancher-compose
+  - rbenv
+  - ruby-build
+  - ssh-copy-id
+  - terraform
+  - terraform-inventory
+  - terraform-provisioner-ansible
+  - tmux
+  - tree
+  - vault
+  - wget
+  - zsh
+  - zsh-syntax-highlighting
+  - kubernetes-cli
+  - minikube
+  - nodejs
+  - npm
