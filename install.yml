@@ -1,6 +1,6 @@
 - name: Install MacOS Packages
   hosts: localhost
-  become: false
+  become: true
   vars:
     install_homebrew_if_missing: true
     upgrade_homebrew_packages: false
