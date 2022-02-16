@@ -4,7 +4,9 @@
   vars:
     install_homebrew_if_missing: true
     upgrade_homebrew_packages: false
+  vars_files:
+    - vars/variable.yml
   pre_tasks:
-    - import_tasks: tasks/brew-setup.yml
+    - import_tasks: task/package/brew-setup.yml
   tasks:
-    - import_tasks: tasks/setup.yml
+    - import_tasks: task/setup.yml

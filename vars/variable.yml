@@ -57,8 +57,6 @@ brew_packages:
   - ruby-build
   - ssh-copy-id
   - terraform
-  - terraform-inventory
-  - terraform-provisioner-ansible
   - tmux
   - tree
   - vault
