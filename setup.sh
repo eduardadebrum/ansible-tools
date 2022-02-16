@@ -1,19 +1,44 @@
+CURRENT_DIRECTORY=$HOME
 
-echo "============= INSTALLING XCODE ==============="
+installXcode() {
+    echo "============= INSTALLING XCODE ==============="
+    xcode-select --install
+    sudo xcodebuild -license accept
+}
 
-xcode-select --install
-sudo xcodebuild -license accept
+downloadRepository() {
+    echo "============= Downloading Project ==============="
+    cd $CURRENT_DIRECTORY
+    "$(curl https://github.com/eduardadebrum/ansible-tools/archive/refs/heads/main.zip -L -o ansible-tools-main.zip)"
+    unzip ansible-tools-main.zip
+    rm ansible-tools-main.zip
+    cd ansible-tools-main
+}
 
-echo "============= INSTALLING ANSIBLE =============="
+# TODO I want to change the way to download ansible. Brew is being installed by ansible.
+installBrew() {
+    if ! hash brew; then
+        echo " ============= INSTALLING BREW =============="
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+}
 
-if ! hash ansible; then
-    echo " ============= INSTALLING ANSIBLE =============="
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew install ansible
-fi
+installAnsible() {
+    if ! hash ansible; then
+        echo " ============= INSTALLING ANSIBLE =============="
+        brew install ansible
+    fi
+}
 
+runAnsiblePlaybook() {
+    echo "============= RUNNING ANSIBLE    =============="
+    # TODO
+    ansible-playbook install.yml
+}
 
-echo "============= RUNNING ANSIBLE    =============="
-# TODO 
-ansible-playbook install.yml
-
+# Main Script
+installXcode
+downloadRepository
+installBrew
+installAnsible
+runAnsiblePlaybook
