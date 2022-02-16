@@ -1,17 +1,7 @@
 # Ansible Software
 
-
-<<<<<<< HEAD
-## Usage
----
-
-```console
-sh https://github.com/eduardadebrum/ansible-tools/install.sh
-```
-=======
 ## Install 
 
 ```console
-sh https://github.com/eduardadebrum/ansible-tools/setup.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/eduardadebrum/ansible-tools/main/setup.sh)"
 ```
->>>>>>> 8f012c9 (Update README)
