@@ -36,9 +36,22 @@ runAnsiblePlaybook() {
     ansible-playbook install.yml
 }
 
-# Main Script
+# ========== Main Script
 installXcode
-downloadRepository
-installBrew
-installAnsible
-runAnsiblePlaybook
+
+echo "Would you like to install the complete project (y/n)?"
+read confirm_istall
+
+if [[ $confirm_istall =~ ^[Yy]$ ]]; then 
+    echo "Starting installation"
+    downloadRepository
+    installBrew
+    installAnsible
+    runAnsiblePlaybook
+elif [[ $confirm_istall =~ ^[Nn]$ ]]; then
+    echo "Just downloading the project"
+    downloadRepository
+else 
+    echo "Skip Installation"
+    exit 1
+fi
