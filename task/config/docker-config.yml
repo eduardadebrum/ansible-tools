@@ -1,0 +1,17 @@
+- name: Creates Docker Directory 
+  file:
+    path: $HOME/docker-folder
+    state: directory
+
+- name: Ensure Docker Directory is created
+  stat:
+    path: $HOME/docker-folder
+  register: docker_folder_check
+
+- name: Copy Docker Compose File
+  shell: cp $PWD/task/util/docker-compose.yml $HOME/docker-folder
+  when: docker_folder_check.stat.exists
+
+- name: Running Docker Compose
+  command: docker-compose -f $HOME/docker-folder/docker-compose.yml up -d
+  when: docker_folder_check.stat.exists
