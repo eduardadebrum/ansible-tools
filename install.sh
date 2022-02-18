@@ -33,7 +33,7 @@ installAnsible() {
 runAnsiblePlaybook() {
     echo "============= RUNNING ANSIBLE    =============="
     # TODO
-    ansible-playbook install.yml
+    ansible-playbook -v install.yml
 }
 
 # ========== Main Script
