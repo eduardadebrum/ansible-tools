@@ -15,3 +15,8 @@ install_zsh_theme_if_missing: true
 upgrade_zsh_theme: true
 ```
 
+
+// N 
+```console
+cd $HOME/ansible-tools-main/ 
+```
