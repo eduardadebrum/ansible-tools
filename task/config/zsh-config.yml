@@ -3,18 +3,18 @@
     path: "$HOME/.oh-my-zsh"
   register: omz_check
 
-- name: OH-MY-ZSH - Installing OH-MY-ZSH
+- name: OH-MY-ZSH - Adding theme
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
   command: source ~/.zshrc
   when: 
    - not omz_check.stat.exists
    - install_zsh_theme_if_missing
 
-- name: OH-MY-ZSH - Updating theme
-  shell: echo abc
-  when:  
-   - omz_check.stat.exists
-   - upgrade_zsh_theme
+# TODO implement: change theme by variable setting  
+# - name: OH-MY-ZSH - Updating theme
+#   shell: echo abc
+#   when:  
+#    - omz_check.stat.exists
+#    - upgrade_zsh_theme
 
 
-# grep  "ZSH_THEME=""" .zshrc 

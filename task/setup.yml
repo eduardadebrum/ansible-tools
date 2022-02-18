@@ -1,2 +1,4 @@
 - import_tasks: package/brew-cask-package.yml
 - import_tasks: package/brew-package.yml
+- import_tasks: config/zsh-config.yml
+- import_tasks: config/docker-config.yml
