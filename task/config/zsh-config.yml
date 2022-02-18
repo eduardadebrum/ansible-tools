@@ -5,7 +5,6 @@
 
 - name: OH-MY-ZSH - Adding theme
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-  command: source ~/.zshrc
   when: 
    - not omz_check.stat.exists
    - install_zsh_theme_if_missing
